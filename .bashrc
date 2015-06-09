@@ -12,13 +12,8 @@ alias ll="ls -alG"
 alias more="less"
 alias tree="tree -C"
 alias be="bundle exec"
-alias gremlin="~/dev/gremlin/gremlin-groovy-2.6.0/bin/gremlin.sh"
 alias mvn-skip="mvn package -Dmaven.test.skip=true"
-alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-alias mongostart="mongod run --config /usr/local/etc/mongod.conf"
 alias dev="cd ~/dev"
-alias practice="cd ~/dev/practice"
 alias pi="pip install -r requirements.txt"
 alias vgs="vagrant global-status --prune"
 alias utc="date -u"
@@ -34,23 +29,10 @@ else
   PS1="[\t][\u:\w]\$ "
 fi
 
-# python env: virtualenv, virtualenvwrapper, and autoenv
-export WORKON_HOME=$HOME/dev/.virtualenvs
-export PROJECT_HOME=$HOME/dev
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
-## autoenv
-source /usr/local/bin/activate.sh
-# end python env
-
 # autocomplete
 complete -C aws_completer aws
-. /usr/local/etc/bash_completion.d/git-completion.bash
-. /usr/local/etc/bash_completion.d/brew_bash_completion.sh
 . /usr/local/etc/bash_completion.d/lein-completion.bash
 . /usr/local/etc/bash_completion.d/tmux
-. /usr/local/etc/bash_completion.d/docker
 . ~/make_target_completion.bash
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
